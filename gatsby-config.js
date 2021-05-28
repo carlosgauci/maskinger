@@ -16,6 +16,27 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    "gatsby-plugin-postcss",
+    {
+      resolve: `gatsby-source-airtable`,
+      options: {
+        apiKey: process.env.GATSBY_AIRTABLE_API,
+        concurrency: 5,
+        tables: [
+          {
+            baseId: process.env.GATSBY_AIRTABLE_BASE,
+            tableName: "Products",
+            mapping: {
+              main_image: `fileNode`,
+              model_image: `fileNode`,
+              product_front: `fileNode`,
+              product_sides: `fileNode`,
+              social_image: `fileNode`,
+            },
+          },
+        ],
+      },
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
