@@ -1,3 +1,33 @@
+@import "@fontsource/poppins/400.css";
+@import "@fontsource/poppins/600.css";
+@import "@fontsource/josefin-slab/400.css";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+  /* .auto-fit {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  } */
+}
+
+@layer base {
+  h1 {
+    @apply font-heading;
+  }
+
+  h2,
+  h3,
+  h4,
+  button {
+    @apply font-body;
+    @apply font-semibold;
+  }
+
+  p,
+  li,
+  a {
+    @apply font-body;
+  }
+}
