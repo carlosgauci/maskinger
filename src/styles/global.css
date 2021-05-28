@@ -7,9 +7,9 @@
 @tailwind utilities;
 
 @layer utilities {
-  /* .auto-fit {
+  .auto-fit {
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  } */
+  }
 }
 
 @layer base {

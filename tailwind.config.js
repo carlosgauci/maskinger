@@ -6,6 +6,7 @@ module.exports = {
       colors: {
         hero: "#F1F6FF",
         primary: "#309C8E",
+        secondary: "#CBDDFF",
       },
     },
     container: {
