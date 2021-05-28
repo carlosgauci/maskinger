@@ -3,8 +3,8 @@ import { BiMenu, BiCartAlt } from "react-icons/bi"
 
 const Header = () => {
   return (
-    <header className="py-4 border-b border-gray-200">
-      <div className="container flex justify-between items-center">
+    <header className="fixed w-full h-20 bg-white border-b border-gray-200 z-10">
+      <div className="container h-full flex justify-between items-center">
         {/* Title */}
         <h1 className="text-4xl">Maskinger</h1>
 
