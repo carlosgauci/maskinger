@@ -1,5 +1,6 @@
 import React from "react"
 import { StaticImage } from "gatsby-plugin-image"
+import Button from "./Button"
 
 const Hero = () => {
   return (
@@ -26,9 +27,7 @@ const Hero = () => {
 
           <div className="flex flex-col items-center justify-center">
             <p className="mb-4 md:font-semibold">FIND YOUR FACE MASK</p>
-            <button className="bg-primary text-white py-3 w-60">
-              SHOP NOW
-            </button>
+            <Button text="SHOP NOW" fullWidth={false} />
           </div>
 
           <StaticImage
