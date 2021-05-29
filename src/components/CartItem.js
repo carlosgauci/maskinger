@@ -1,6 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { GatsbyImage } from "gatsby-plugin-image"
+import QuantitySelect from "./QuantitySelect"
 
 const CartItem = ({ product }) => {
   const { name, price, cartImage, quantity } = product
@@ -19,7 +20,7 @@ const CartItem = ({ product }) => {
       <h3 className="text-center font-normal text-lg">{name}</h3>
 
       {/* Quantity select */}
-      <p>{quantity} + -</p>
+      <QuantitySelect quantity={quantity} cartPage={true} product={product} />
 
       {/* Price */}
       <p className="text-center font-semibold text-lg text-primary">

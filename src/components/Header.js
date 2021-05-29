@@ -25,7 +25,7 @@ const Header = () => {
             <div className="relative">
               <BiCartAlt className="text-3xl" />
               {totalItems > 0 && (
-                <span className="absolute top-0 right-0 bg-primary rounded-full w-5 h-5 flex items-center justify-center text-xs text-white font-body  transform translate-x-3 -translate-y-2">
+                <span className="absolute top-0 right-0 bg-primary rounded-full w-4 h-4 flex items-center justify-center text-xxs text-white font-body  transform translate-x-1.5 -translate-y-1.5">
                   {totalItems}
                 </span>
               )}

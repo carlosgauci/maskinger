@@ -1,10 +1,11 @@
-import React from "react"
+import React, { useState } from "react"
 import PropTypes from "prop-types"
 import { graphql } from "gatsby"
 import ProductSlider from "../components/ProductSlider"
 import Button from "../components/Button"
 import ProductInfo from "../components/ProductInfo"
 import Breadcrumbs from "../components/Breadcrumbs"
+import QuantitySelect from "../components/QuantitySelect"
 import { useDispatch } from "react-redux"
 import { addToCart } from "../actions/CartActions"
 
@@ -20,6 +21,7 @@ const ProductPage = ({ data }) => {
   } = data.product.data
 
   const dispatch = useDispatch()
+  const [quantity, setQuantity] = useState(1)
 
   // Images for slider
   const images = [
@@ -35,7 +37,7 @@ const ProductPage = ({ data }) => {
     name,
     price,
     cartImage,
-    quantity: 1,
+    quantity,
   }
 
   return (
@@ -50,6 +52,12 @@ const ProductPage = ({ data }) => {
         <div className="w-full lg:w-2/5 flex flex-col gap-2 lg:gap-6 justify-center">
           <h2 className="text-2xl md:text-3xl font-normal">{name} Face Mask</h2>
           <p className="text-2xl md:text-3xl">€{(price / 100).toFixed(2)}</p>
+          {/* Quantity select */}
+          <QuantitySelect
+            quantity={quantity}
+            setQuantity={setQuantity}
+            product={item}
+          />
           <Button
             fullWidth={true}
             text="ADD TO CART"

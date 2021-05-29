@@ -11,6 +11,21 @@
   .auto-fit {
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   }
+
+  .text-xxs {
+    font-size: 0.65rem;
+  }
+
+  /* Remove number input arrows */
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
 }
 
 @layer base {
