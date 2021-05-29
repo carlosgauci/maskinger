@@ -3,7 +3,7 @@ const fetch = require("cross-fetch")
 
 // Get the product list from the api
 async function getProducts() {
-  const res = await fetch(process.env.API_URL)
+  const res = await fetch(`${process.env.API_URL}`)
   const data = await res.json()
   return data
 }
