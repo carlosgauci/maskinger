@@ -9,7 +9,6 @@ import QuantitySelect from "../components/QuantitySelect"
 import { useDispatch } from "react-redux"
 import { addToCart } from "../actions/CartActions"
 import { toast } from "react-toastify"
-import { BsChevronRight } from "react-icons/bs"
 
 const ProductPage = ({ data }) => {
   const {

@@ -30,10 +30,6 @@
   input[type="number"] {
     -moz-appearance: textfield;
   }
-
-  .Toastify__progress-bar {
-    background: #309c8e;
-  }
 }
 
 @layer base {
@@ -53,5 +49,9 @@
   li,
   a {
     @apply font-body;
+  }
+
+  .Toastify__progress-bar {
+    background: #309c8e;
   }
 }

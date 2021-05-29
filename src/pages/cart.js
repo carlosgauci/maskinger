@@ -1,5 +1,5 @@
 import React from "react"
-import { useDispatch, useSelector } from "react-redux"
+import { useSelector } from "react-redux"
 import { Link } from "gatsby"
 import Button from "../components/Button"
 import CartItem from "../components/CartItem"
