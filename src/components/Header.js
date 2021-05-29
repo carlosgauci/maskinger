@@ -1,8 +1,14 @@
 import React from "react"
 import { BiMenu, BiCartAlt } from "react-icons/bi"
 import { Link } from "gatsby"
+import { useSelector } from "react-redux"
 
 const Header = () => {
+  const cart = useSelector(state => state.cart)
+
+  // Total items in cart
+  const totalItems = cart.reduce((total, item) => total + item.quantity, 0)
+
   return (
     <header className="fixed w-full h-20 bg-white border-b border-gray-200 z-10">
       <div className="container h-full flex justify-between items-center">
@@ -14,9 +20,19 @@ const Header = () => {
         {/* Nav & icons */}
         <nav className="flex gap-4 md:gap-8">
           <button className="hidden md:block font-normal">Shop</button>
+          {/* Cart icon/link */}
           <Link to="/cart">
-            <BiCartAlt className="text-3xl" />
+            <div className="relative">
+              <BiCartAlt className="text-3xl" />
+              {totalItems > 0 && (
+                <span className="absolute top-0 right-0 bg-primary rounded-full w-5 h-5 flex items-center justify-center text-xs text-white font-body  transform translate-x-3 -translate-y-2">
+                  {totalItems}
+                </span>
+              )}
+            </div>
           </Link>
+
+          {/* Mobile nav icon */}
           <BiMenu className="md:hidden text-3xl" />
         </nav>
       </div>
