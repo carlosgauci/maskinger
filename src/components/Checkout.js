@@ -45,7 +45,7 @@ const Checkout = () => {
   }
 
   return (
-    <article className="w-full grid grid-cols-1 md:grid-cols-3 place-items-center gap-4 md:gap-8 py-4 px-8 bg-gray-800 rounded-md overflow-hidden">
+    <article className="w-full grid grid-cols-1 md:grid-cols-3 place-items-center gap-4 md:gap-8 py-4 px-8 h-20 bg-gray-800 rounded-md overflow-hidden">
       {/* Cart total */}
       <p className="text-xl text-white ">
         Shipping: €{(shipping(cart) / 100).toFixed(2)}
@@ -55,10 +55,13 @@ const Checkout = () => {
       </p>
       {/* Checkout */}
       <div className="flex items-center">
-        <Button text="Checkout" fullWidth={false} click={() => checkOut()} />
-
-        {loader && (
-          <BiLoaderCircle className="text-2xl text-white ml-4 animate-spin-slow" />
+        {loader ? (
+          <div className="flex w-52 py-3 bg-primary justify-center">
+            <BiLoaderCircle className="text-2xl text-white mr-2 animate-spin-slow" />
+            <p className="text-white">Loading...</p>
+          </div>
+        ) : (
+          <Button text="Checkout" fullWidth={false} click={() => checkOut()} />
         )}
       </div>
     </article>

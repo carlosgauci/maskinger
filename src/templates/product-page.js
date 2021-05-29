@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import PropTypes from "prop-types"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import ProductSlider from "../components/ProductSlider"
 import Button from "../components/Button"
 import ProductInfo from "../components/ProductInfo"
@@ -8,6 +8,8 @@ import Breadcrumbs from "../components/Breadcrumbs"
 import QuantitySelect from "../components/QuantitySelect"
 import { useDispatch } from "react-redux"
 import { addToCart } from "../actions/CartActions"
+import { toast } from "react-toastify"
+import { BsChevronRight } from "react-icons/bs"
 
 const ProductPage = ({ data }) => {
   const {
@@ -42,8 +44,24 @@ const ProductPage = ({ data }) => {
     quantity,
   }
 
+  // Added to cart toast
+  const notify = () =>
+    toast(
+      <div className="flex w-full h-full justify-center items-center">
+        <Link to="/cart" className="flex items-center text-black">
+          Added to cart!
+        </Link>
+      </div>,
+      {
+        position: "bottom-center",
+        autoClose: 2000,
+        progressClassName: "green-progress",
+      }
+    )
+
   const handleCart = () => {
     dispatch(addToCart(item))
+    notify()
     setQuantity(1)
   }
 
@@ -55,12 +73,18 @@ const ProductPage = ({ data }) => {
         {/* Product slider */}
         <ProductSlider images={images} name={name} />
 
-        {/* Title, price & button */}
+        {/* Product Info section */}
         <div className="w-full lg:w-2/5 flex flex-col gap-2 lg:gap-6 justify-center">
+          {/* Product Title */}
           <h2 className="text-2xl md:text-3xl font-normal">{name} Face Mask</h2>
+
+          {/* Price */}
           <p className="text-2xl md:text-3xl">€{(price / 100).toFixed(2)}</p>
+
           {/* Quantity select */}
           <QuantitySelect quantity={quantity} setQuantity={setQuantity} />
+
+          {/* Add to cart */}
           <Button fullWidth={true} text="ADD TO CART" click={handleCart} />
 
           <ProductInfo />
