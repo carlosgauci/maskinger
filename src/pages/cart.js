@@ -14,7 +14,7 @@ const CartPage = () => {
       </h2>
 
       {cart.length ? (
-        <section className="container px-0 max-w-5xl py-8 md:py-14 flex flex-col gap-4">
+        <section className="container px-0 max-w-5xl py-8 md:py-14 flex flex-col ">
           {cart.map(product => (
             <CartItem key={product.id} product={product} />
           ))}

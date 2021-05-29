@@ -14,6 +14,7 @@ const ProductPage = ({ data }) => {
     name,
     price,
     id,
+    slug,
     main_image,
     product_sides,
     model_image,
@@ -36,6 +37,7 @@ const ProductPage = ({ data }) => {
     id,
     name,
     price,
+    slug,
     cartImage,
     quantity,
   }
@@ -75,6 +77,7 @@ export const query = graphql`
         name
         price
         id
+        slug
         social_image {
           raw {
             url
