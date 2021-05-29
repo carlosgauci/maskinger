@@ -87,7 +87,7 @@ export const query = graphql`
                 formats: [AUTO, WEBP, AVIF]
                 layout: FULL_WIDTH
                 quality: 80
-                sizes: "500"
+                sizes: "600"
                 aspectRatio: 1
                 placeholder: BLURRED
               )
@@ -117,7 +117,7 @@ export const query = graphql`
                 formats: [AUTO, WEBP, AVIF]
                 layout: FULL_WIDTH
                 quality: 80
-                sizes: "500"
+                sizes: "600"
                 aspectRatio: 1
                 placeholder: BLURRED
               )
@@ -132,7 +132,7 @@ export const query = graphql`
                 formats: [AUTO, WEBP, AVIF]
                 layout: FULL_WIDTH
                 quality: 60
-                sizes: "500"
+                sizes: "600"
                 aspectRatio: 1
                 placeholder: BLURRED
               )
