@@ -23,22 +23,28 @@ const QuantitySelect = ({ product, quantity, setQuantity, cartPage }) => {
   }
 
   return (
-    <section className="">
+    <section className="flex ">
       {/* Decrease btn */}
-      <button className="bg-gray-200 w-10 h-8" onClick={handleDecrease}>
+      <button
+        className="bg-gray-200 w-8 h-6 md:w-10 md:h-8 focus:outline-none"
+        onClick={handleDecrease}
+      >
         -
       </button>
 
       {/* Input */}
       <input
-        className="w-10 h-8 text-center"
+        className="w-8 h-6 md:w-10 md:h-8 text-center"
         type="number"
         value={quantity}
         onChange={e => setQuantity(e.target.value)}
       />
 
       {/* Increase btn */}
-      <button className="bg-gray-200 w-10 h-8" onClick={handleIncrease}>
+      <button
+        className="bg-gray-200 w-8 h-6 md:w-10 md:h-8 focus:outline-none"
+        onClick={handleIncrease}
+      >
         +
       </button>
     </section>
