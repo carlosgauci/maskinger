@@ -9,6 +9,7 @@ import QuantitySelect from "../components/QuantitySelect"
 import { useDispatch } from "react-redux"
 import { addToCart } from "../actions/CartActions"
 import { toast } from "react-toastify"
+import Seo from "../components/Seo"
 
 const ProductPage = ({ data }) => {
   const {
@@ -20,6 +21,7 @@ const ProductPage = ({ data }) => {
     product_sides,
     model_image,
     cartImage,
+    ogImage,
   } = data.product.data
 
   const dispatch = useDispatch()
@@ -66,31 +68,36 @@ const ProductPage = ({ data }) => {
   }
 
   return (
-    <div className="min-h-screen pt-20">
-      <Breadcrumbs name={`${name} Face Mask`} />
+    <>
+      <Seo title={`${name} Face Mask | Maskinger`} image={ogImage.raw[0].url} />
+      <div className="min-h-screen pt-20">
+        <Breadcrumbs name={`${name} Face Mask`} />
 
-      <section className="container py-4 lg:py-6 flex flex-col lg:flex-row lg:gap-8 overflow-hidden">
-        {/* Product slider */}
-        <ProductSlider images={images} name={name} />
+        <section className="container py-4 lg:py-6 flex flex-col lg:flex-row lg:gap-8 overflow-hidden">
+          {/* Product slider */}
+          <ProductSlider images={images} name={name} />
 
-        {/* Product Info section */}
-        <div className="w-full lg:w-2/5 flex flex-col gap-2 lg:gap-6 justify-center">
-          {/* Product Title */}
-          <h2 className="text-2xl md:text-3xl font-normal">{name} Face Mask</h2>
+          {/* Product Info section */}
+          <div className="w-full lg:w-2/5 flex flex-col gap-2 lg:gap-6 justify-center">
+            {/* Product Title */}
+            <h2 className="text-2xl md:text-3xl font-normal">
+              {name} Face Mask
+            </h2>
 
-          {/* Price */}
-          <p className="text-2xl md:text-3xl">€{(price / 100).toFixed(2)}</p>
+            {/* Price */}
+            <p className="text-2xl md:text-3xl">€{(price / 100).toFixed(2)}</p>
 
-          {/* Quantity select */}
-          <QuantitySelect quantity={quantity} setQuantity={setQuantity} />
+            {/* Quantity select */}
+            <QuantitySelect quantity={quantity} setQuantity={setQuantity} />
 
-          {/* Add to cart */}
-          <Button fullWidth={true} text="ADD TO CART" click={handleCart} />
+            {/* Add to cart */}
+            <Button fullWidth={true} text="ADD TO CART" click={handleCart} />
 
-          <ProductInfo />
-        </div>
-      </section>
-    </div>
+            <ProductInfo />
+          </div>
+        </section>
+      </div>
+    </>
   )
 }
 
@@ -115,21 +122,6 @@ export const query = graphql`
                 layout: FULL_WIDTH
                 quality: 80
                 sizes: "600"
-                aspectRatio: 1
-                placeholder: BLURRED
-              )
-            }
-          }
-        }
-
-        cartImage: main_image {
-          localFiles {
-            childImageSharp {
-              gatsbyImageData(
-                formats: [AUTO, WEBP, AVIF]
-                layout: FULL_WIDTH
-                quality: 80
-                sizes: "100"
                 aspectRatio: 1
                 placeholder: BLURRED
               )
@@ -164,6 +156,27 @@ export const query = graphql`
                 placeholder: BLURRED
               )
             }
+          }
+        }
+
+        cartImage: main_image {
+          localFiles {
+            childImageSharp {
+              gatsbyImageData(
+                formats: [AUTO, WEBP, AVIF]
+                layout: FULL_WIDTH
+                quality: 80
+                sizes: "100"
+                aspectRatio: 1
+                placeholder: BLURRED
+              )
+            }
+          }
+        }
+
+        ogImage: main_image {
+          raw {
+            url
           }
         }
       }

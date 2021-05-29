@@ -3,10 +3,12 @@ import Hero from "../components/Hero"
 import ProductGrid from "../components/ProductGrid"
 import PropTypes from "prop-types"
 import { graphql } from "gatsby"
+import Seo from "../components/Seo"
 
 const IndexPage = ({ data }) => {
   return (
     <>
+      <Seo />
       <Hero />
       <ProductGrid products={data.allAirtable.products} />
     </>
