@@ -7,14 +7,17 @@
 @tailwind utilities;
 
 @layer utilities {
+  /* Product grid */
   .auto-fit {
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   }
 
+  /* Overwrite slick slider css */
   .slick-slider {
     display: flex !important;
-    flex-direction: row-reverse;
-    gap: 2rem;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
   }
 
   .slick-dots {
@@ -22,14 +25,14 @@
     bottom: 0 !important;
     display: flex !important;
     width: auto !important;
-    flex-direction: column;
     justify-content: center;
-    gap: 0.5rem;
+    gap: 0.25rem;
+    margin: 0 !important;
   }
 
   .slick-dots li {
-    width: 5rem !important;
-    height: 5rem !important;
+    width: 3.5rem !important;
+    height: 3.5rem !important;
   }
 
   .slick-arrow {
@@ -38,7 +41,31 @@
 
   .slick-list {
     width: 100%;
-    max-width: 32rem;
+    max-width: 35rem;
+    margin: 0 auto;
+  }
+
+  .slick-active button div {
+    border-color: #000;
+  }
+
+  @media (min-width: 1024px) {
+    .slick-slider {
+      flex-direction: row-reverse;
+      gap: 2rem;
+      justify-content: flex-end;
+    }
+
+    .slick-dots {
+      flex-direction: column;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+
+    .slick-dots li {
+      width: 5rem !important;
+      height: 5rem !important;
+    }
   }
 }
 

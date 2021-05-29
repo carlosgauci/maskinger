@@ -38,6 +38,10 @@ module.exports = {
               social_image: `fileNode`,
             },
           },
+          {
+            baseId: process.env.GATSBY_AIRTABLE_BASE,
+            tableName: "Info",
+          },
         ],
       },
     },

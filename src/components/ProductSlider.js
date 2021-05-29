@@ -10,11 +10,11 @@ const ProductSlider = ({ name, images }) => {
   const settings = {
     customPaging: function (i) {
       return (
-        <button className="h-20 w-20">
+        <button className="">
           <GatsbyImage
             image={images[i]}
             alt={name}
-            className="w-20 h-20 bg-white border border-gray-300"
+            className="w-14 h-14  lg:w-20 lg:h-20 bg-white border border-gray-300"
           />
         </button>
       )
@@ -27,12 +27,15 @@ const ProductSlider = ({ name, images }) => {
   }
 
   return (
-    <section className="w-3/5">
+    <section className="w-full lg:w-3/5 mb-10 lg:mb-0 flex flex-col justify-center">
       <Slider {...settings}>
         {images.map((image, i) => (
-          <div key={i}>
-            <GatsbyImage image={image} alt={name} />
-          </div>
+          <GatsbyImage
+            key={i}
+            image={image}
+            alt={name}
+            className="w-full h-full"
+          />
         ))}
       </Slider>
     </section>
