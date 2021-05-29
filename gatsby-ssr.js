@@ -6,12 +6,7 @@ import { Provider } from "react-redux"
 import { cartReducer } from "./src/reducers/cartReducer"
 
 // Redux store
-const composeEnhancers =
-  typeof window === "object"
-    ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__()
-    : compose
-
-const store = createStore(cartReducer, composeEnhancers)
+const store = createStore(cartReducer)
 
 export const wrapPageElement = ({ element, props }) => {
   return (

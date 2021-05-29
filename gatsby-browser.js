@@ -1,17 +1,21 @@
 import React from "react"
 import Layout from "./src/components/Layout"
 import "./src/styles/global.css"
-import { createStore, compose } from "redux"
+import { createStore } from "redux"
 import { Provider } from "react-redux"
 import { cartReducer } from "./src/reducers/cartReducer"
+import { loadState, saveState } from "./src/utils/localStorage"
+
+// Get state from local storage
+const persistedState = loadState()
 
 // Redux store
-const composeEnhancers =
-  typeof window === "object"
-    ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__()
-    : compose
+const store = createStore(cartReducer, persistedState)
 
-const store = createStore(cartReducer, composeEnhancers)
+// Save to local storage on store change
+store.subscribe(() => {
+  saveState(store.getState())
+})
 
 export const wrapPageElement = ({ element, props }) => {
   return (

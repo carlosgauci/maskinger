@@ -5,8 +5,6 @@ import {
 } from "../constants/actionTypes"
 
 const initialState = {
-  loading: false,
-  error: null,
   cart: [],
   navOpen: false,
 }
