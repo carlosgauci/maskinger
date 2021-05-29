@@ -61,7 +61,7 @@ const Checkout = () => {
             <p className="text-white">Loading...</p>
           </div>
         ) : (
-          <Button text="Checkout" fullWidth={false} click={() => checkOut()} />
+          <Button text="CHECKOUT" fullWidth={false} click={() => checkOut()} />
         )}
       </div>
     </article>
