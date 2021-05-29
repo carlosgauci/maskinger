@@ -12,10 +12,10 @@ const ProductCard = ({ product }) => {
         <GatsbyImage
           image={main_image.localFiles[0].childImageSharp.gatsbyImageData}
           alt={name}
-          className="absolute inset-0"
+          className="w-full h-full"
         />
 
-        <section className="relative h-full flex flex-col justify-between">
+        <section className="absolute inset-0 flex flex-col justify-between">
           {/* New tag */}
           <div className="pl-1 pt-1">
             {product.new && (

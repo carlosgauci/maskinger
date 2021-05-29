@@ -24,7 +24,7 @@ const ProductPage = ({ data }) => {
   ]
 
   return (
-    <div className="mt-20">
+    <div className="min-h-screen pt-20">
       <Breadcrumbs name={`${name} Face Mask`} />
 
       <section className="container py-4 lg:py-6 flex flex-col lg:flex-row lg:gap-8 overflow-hidden">
