@@ -3,7 +3,7 @@ const fetch = require("cross-fetch")
 
 // Get the product list from the api
 async function getProducts() {
-  const res = await fetch("https://maskinger.com/products")
+  const res = await fetch(`${process.env.API_URL}`)
   const data = await res.json()
   return data
 }
@@ -19,7 +19,6 @@ async function getSelectedProducts(items) {
         ...found,
         quantity: item.quantity,
       })
-      console.log(`pushed ${item.name}`)
     }
   })
 
@@ -58,7 +57,6 @@ const addShipping = products => {
     quantity: 1,
   })
 
-  console.log(`added ${total} shipping`)
   return products
 }
 
