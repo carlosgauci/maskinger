@@ -2,13 +2,21 @@ import React from "react"
 import { GatsbyImage } from "gatsby-plugin-image"
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
+import { motion } from "framer-motion"
+import { productVariants } from "../framer/variants"
 
 const ProductCard = ({ product }) => {
   const { name, price, main_image, slug } = product
   return (
     <Link to={slug}>
-      <article className="relative w-full h-72 border border-gray-200 rounded-md overflow-hidden">
+      <motion.article
+        className="relative w-full h-72 border border-gray-200 rounded-md overflow-hidden"
+        variants={productVariants}
+        initial="initial"
+        whileHover="hover"
+      >
         {/* Image */}
+
         <GatsbyImage
           image={main_image.localFiles[0].childImageSharp.gatsbyImageData}
           alt={name}
@@ -33,7 +41,7 @@ const ProductCard = ({ product }) => {
             </p>
           </div>
         </section>
-      </article>
+      </motion.article>
     </Link>
   )
 }
