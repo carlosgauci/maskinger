@@ -28,7 +28,6 @@ const CartItem = ({ product }) => {
       <p className="text-center font-semibold text-lg text-primary">
         €{((price * quantity) / 100).toFixed(2)}
       </p>
-      {console.log(product)}
     </article>
   )
 }

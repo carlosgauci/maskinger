@@ -1,10 +1,12 @@
 import React from "react"
 import { BiMenu, BiCartAlt } from "react-icons/bi"
 import { Link } from "gatsby"
-import { useSelector } from "react-redux"
+import { useSelector, useDispatch } from "react-redux"
+import { toggleNav } from "../actions/CartActions"
 
 const Header = () => {
   const cart = useSelector(state => state.cart)
+  const dispatch = useDispatch()
 
   // Total items in cart
   const totalItems = cart.reduce((total, item) => total + item.quantity, 0)
@@ -33,7 +35,10 @@ const Header = () => {
           </Link>
 
           {/* Mobile nav icon */}
-          <BiMenu className="md:hidden text-3xl" />
+          <BiMenu
+            className="md:hidden text-3xl"
+            onClick={() => dispatch(toggleNav())}
+          />
         </nav>
       </div>
     </header>

@@ -1,9 +1,14 @@
-import { ADD_TO_CART, REMOVE_FROM_CART } from "../constants/actionTypes"
+import {
+  ADD_TO_CART,
+  REMOVE_FROM_CART,
+  TOGGLE_NAV,
+} from "../constants/actionTypes"
 
 const initialState = {
   loading: false,
   error: null,
   cart: [],
+  navOpen: false,
 }
 
 export const cartReducer = (state = initialState, action) => {
@@ -57,6 +62,9 @@ export const cartReducer = (state = initialState, action) => {
           cart: state.cart.filter(item => item.id !== action.product.id),
         }
       }
+
+    case TOGGLE_NAV:
+      return { ...state, navOpen: !state.navOpen }
 
     default:
       return state
