@@ -59,6 +59,7 @@ const ProductPage = ({ data }) => {
       }
     )
 
+  // Handle Add to cart
   const handleCart = () => {
     dispatch(addToCart(item))
     notify()

@@ -45,7 +45,7 @@ const Checkout = () => {
   }
 
   return (
-    <article className="w-full grid grid-cols-1 md:grid-cols-3 place-items-center gap-4 md:gap-8 py-4 px-8 h-20 bg-gray-800 rounded-md overflow-hidden">
+    <article className="w-full grid grid-cols-1 md:grid-cols-3 place-items-center gap-4 md:gap-8 py-4 px-8 min-h-20 bg-gray-800 rounded-md overflow-hidden">
       {/* Cart total */}
       <p className="text-xl text-white ">
         Shipping: €{(shipping(cart) / 100).toFixed(2)}

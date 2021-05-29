@@ -16,6 +16,10 @@
     font-size: 0.65rem;
   }
 
+  .min-h-20 {
+    min-height: 5rem;
+  }
+
   /* Remove number input arrows */
   input::-webkit-outer-spin-button,
   input::-webkit-inner-spin-button {
