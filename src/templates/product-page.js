@@ -5,15 +5,21 @@ import ProductSlider from "../components/ProductSlider"
 import Button from "../components/Button"
 import ProductInfo from "../components/ProductInfo"
 import Breadcrumbs from "../components/Breadcrumbs"
+import { useDispatch } from "react-redux"
+import { addToCart } from "../actions/CartActions"
 
 const ProductPage = ({ data }) => {
   const {
     name,
     price,
+    id,
     main_image,
     product_sides,
     model_image,
+    cartImage,
   } = data.product.data
+
+  const dispatch = useDispatch()
 
   // Images for slider
   const images = [
@@ -22,6 +28,15 @@ const ProductPage = ({ data }) => {
     product_sides.localFiles[1].childImageSharp.gatsbyImageData,
     model_image.localFiles[0].childImageSharp.gatsbyImageData,
   ]
+
+  // Item to add to cart
+  const item = {
+    id,
+    name,
+    price,
+    cartImage,
+    quantity: 1,
+  }
 
   return (
     <div className="min-h-screen pt-20">
@@ -35,7 +50,11 @@ const ProductPage = ({ data }) => {
         <div className="w-full lg:w-2/5 flex flex-col gap-2 lg:gap-6 justify-center">
           <h2 className="text-2xl md:text-3xl font-normal">{name} Face Mask</h2>
           <p className="text-2xl md:text-3xl">€{(price / 100).toFixed(2)}</p>
-          <Button fullWidth={true} text="ADD TO CART" />
+          <Button
+            fullWidth={true}
+            text="ADD TO CART"
+            click={() => dispatch(addToCart(item))}
+          />
 
           <ProductInfo />
         </div>
@@ -50,6 +69,7 @@ export const query = graphql`
       data {
         name
         price
+        id
         social_image {
           raw {
             url
@@ -63,6 +83,21 @@ export const query = graphql`
                 layout: FULL_WIDTH
                 quality: 80
                 sizes: "500"
+                aspectRatio: 1
+                placeholder: BLURRED
+              )
+            }
+          }
+        }
+
+        cartImage: main_image {
+          localFiles {
+            childImageSharp {
+              gatsbyImageData(
+                formats: [AUTO, WEBP, AVIF]
+                layout: FULL_WIDTH
+                quality: 80
+                sizes: "100"
                 aspectRatio: 1
                 placeholder: BLURRED
               )
