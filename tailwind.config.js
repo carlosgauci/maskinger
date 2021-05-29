@@ -8,6 +8,9 @@ module.exports = {
         primary: "#309C8E",
         secondary: "#CBDDFF",
       },
+      animation: {
+        "spin-slow": "spin 3s linear infinite",
+      },
     },
     container: {
       padding: {

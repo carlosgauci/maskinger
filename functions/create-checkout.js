@@ -1,10 +1,10 @@
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY)
+const fetch = require("cross-fetch")
 
 // Get the product list from the api
 async function getProducts() {
-  const res = await fetch("/api/products")
+  const res = await fetch("http://localhost:8888/api/products")
   const data = await res.json()
-  console.log(data)
   return data
 }
 
@@ -19,6 +19,7 @@ async function getSelectedProducts(items) {
         ...found,
         quantity: item.quantity,
       })
+      console.log(`pushed ${item.name}`)
     }
   })
 
@@ -56,6 +57,8 @@ const addShipping = products => {
     price: total,
     quantity: 1,
   })
+
+  console.log(`added ${total} shipping`)
   return products
 }
 
@@ -113,7 +116,7 @@ exports.handler = async event => {
     statusCode: 200,
     body: JSON.stringify({
       sessionId: session.id,
-      publishableKey: process.env.STRIPE_PUBLISHABLE_KEY,
+      publishableKey: process.env.GATSBY_STRIPE_PUBLISHABLE_KEY,
     }),
   }
 }
