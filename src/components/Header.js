@@ -3,6 +3,7 @@ import { BiMenu, BiCartAlt } from "react-icons/bi"
 import { Link } from "gatsby"
 import { useSelector, useDispatch } from "react-redux"
 import { toggleNav } from "../actions/CartActions"
+import { AnchorLink } from "gatsby-plugin-anchor-links"
 
 const Header = () => {
   const cart = useSelector(state => state.cart)
@@ -21,7 +22,11 @@ const Header = () => {
 
         {/* Nav & icons */}
         <nav className="flex gap-4 md:gap-8">
-          <button className="hidden md:block font-normal">Shop</button>
+          {/* Shop link */}
+          <AnchorLink to={`/#shop`}>
+            <button className="hidden md:block font-normal">Shop</button>
+          </AnchorLink>
+
           {/* Cart icon/link */}
           <Link to="/cart">
             <div className="relative">

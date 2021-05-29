@@ -46,6 +46,13 @@ module.exports = {
       },
     },
     {
+      resolve: "gatsby-plugin-anchor-links",
+      options: {
+        duration: 1000,
+        offset: -80,
+      },
+    },
+    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `gatsby-starter-default`,

@@ -4,6 +4,7 @@ import { navVariants } from "../framer/variants"
 import { Link } from "gatsby"
 import { useDispatch } from "react-redux"
 import { toggleNav } from "../actions/CartActions"
+import { AnchorLink } from "gatsby-plugin-anchor-links"
 
 export default function Navigation() {
   const dispatch = useDispatch()
@@ -17,15 +18,11 @@ export default function Navigation() {
     >
       <h3 className="font-heading text-3xl font-normal mb-4">Navigation</h3>
 
-      <Link to="/" className="text-2xl" onClick={() => dispatch(toggleNav())}>
-        Shop
-      </Link>
-      <Link
-        to="/cart"
-        className="text-2xl"
-        onClick={() => dispatch(toggleNav())}
-      >
-        Cart
+      <AnchorLink to={`/#shop`} onAnchorLinkClick={() => dispatch(toggleNav())}>
+        <button className="text-2xl font-normal">Shop</button>
+      </AnchorLink>
+      <Link to="/cart" onClick={() => dispatch(toggleNav())}>
+        <button className="text-2xl font-normal">Cart</button>
       </Link>
     </motion.nav>
   )

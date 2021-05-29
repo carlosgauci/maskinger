@@ -9,7 +9,9 @@ const QuantitySelect = ({ product, quantity, setQuantity, cartPage }) => {
   const handleIncrease = () => {
     // If increased from the cart page - addToCart
     // If increased from the product page - increase quantity inside the input
-    cartPage ? dispatch(addToCart(product)) : setQuantity(quantity + 1)
+    cartPage
+      ? dispatch(addToCart({ ...product, quantity: 1 }))
+      : setQuantity(quantity + 1)
   }
 
   const handleDecrease = () => {

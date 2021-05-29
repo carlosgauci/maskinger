@@ -4,7 +4,7 @@ import ProductCard from "./ProductCard"
 
 const ProductGrid = ({ products }) => {
   return (
-    <section className="container py-8">
+    <section className="container py-8" id="shop">
       <h3 className="font-heading text-center text-2xl md:text-4xl mb-4 md:mb-8">
         Face Masks
       </h3>
