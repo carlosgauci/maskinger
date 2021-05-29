@@ -11,7 +11,7 @@ const ProductGrid = ({ products }) => {
 
       <div className="grid auto-fit gap-8">
         {products.map(product => (
-          <ProductCard key={product.data.order} product={product.data} />
+          <ProductCard key={product.data.id} product={product.data} />
         ))}
       </div>
     </section>

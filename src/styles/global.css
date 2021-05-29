@@ -10,6 +10,36 @@
   .auto-fit {
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   }
+
+  .slick-slider {
+    display: flex !important;
+    flex-direction: row-reverse;
+    gap: 2rem;
+  }
+
+  .slick-dots {
+    position: relative !important;
+    bottom: 0 !important;
+    display: flex !important;
+    width: auto !important;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  .slick-dots li {
+    width: 5rem !important;
+    height: 5rem !important;
+  }
+
+  .slick-arrow {
+    display: none !important;
+  }
+
+  .slick-list {
+    width: 100%;
+    max-width: 32rem;
+  }
 }
 
 @layer base {

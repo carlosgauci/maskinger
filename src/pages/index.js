@@ -1,6 +1,7 @@
 import React from "react"
 import Hero from "../components/Hero"
 import ProductGrid from "../components/ProductGrid"
+import PropTypes from "prop-types"
 import { graphql } from "gatsby"
 
 const IndexPage = ({ data }) => {
@@ -22,7 +23,8 @@ export const query = graphql`
       products: nodes {
         data {
           name
-          order
+          slug
+          id
           price
           new
           main_image {
@@ -37,5 +39,9 @@ export const query = graphql`
     }
   }
 `
+
+IndexPage.propTypes = {
+  data: PropTypes.object.isRequired,
+}
 
 export default IndexPage
