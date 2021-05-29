@@ -1,6 +1,7 @@
 import React from "react"
 import { useDispatch } from "react-redux"
-import { addToCart, removeFromCart } from "../actions/cartActions"
+import { addToCart, removeFromCart } from "../actions/CartActions"
+import PropTypes from "prop-types"
 
 const QuantitySelect = ({ product, quantity, setQuantity, cartPage }) => {
   const dispatch = useDispatch()
@@ -42,4 +43,10 @@ const QuantitySelect = ({ product, quantity, setQuantity, cartPage }) => {
   )
 }
 
+QuantitySelect.propTypes = {
+  product: PropTypes.object,
+  quantity: PropTypes.number.isRequired,
+  setQuantity: PropTypes.func,
+  cartPage: PropTypes.bool,
+}
 export default QuantitySelect

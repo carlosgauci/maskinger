@@ -6,7 +6,6 @@ import CartItem from "../components/CartItem"
 import Checkout from "../components/Checkout"
 
 const CartPage = () => {
-  const dispatch = useDispatch()
   const cart = useSelector(state => state.cart)
   return (
     <div className="container max-w-4xl pt-24 pb-4 md:pt-28 md:pb-8">

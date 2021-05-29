@@ -40,6 +40,11 @@ const ProductPage = ({ data }) => {
     quantity,
   }
 
+  const handleCart = () => {
+    dispatch(addToCart(item))
+    setQuantity(1)
+  }
+
   return (
     <div className="min-h-screen pt-20">
       <Breadcrumbs name={`${name} Face Mask`} />
@@ -53,16 +58,8 @@ const ProductPage = ({ data }) => {
           <h2 className="text-2xl md:text-3xl font-normal">{name} Face Mask</h2>
           <p className="text-2xl md:text-3xl">€{(price / 100).toFixed(2)}</p>
           {/* Quantity select */}
-          <QuantitySelect
-            quantity={quantity}
-            setQuantity={setQuantity}
-            product={item}
-          />
-          <Button
-            fullWidth={true}
-            text="ADD TO CART"
-            click={() => dispatch(addToCart(item))}
-          />
+          <QuantitySelect quantity={quantity} setQuantity={setQuantity} />
+          <Button fullWidth={true} text="ADD TO CART" click={handleCart} />
 
           <ProductInfo />
         </div>
