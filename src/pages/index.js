@@ -9,7 +9,6 @@ const IndexPage = ({ data }) => {
     <>
       <Hero />
       <ProductGrid products={data.allAirtable.products} />
-      {console.log(data)}
     </>
   )
 }

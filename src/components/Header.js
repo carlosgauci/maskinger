@@ -14,7 +14,9 @@ const Header = () => {
         {/* Nav & icons */}
         <nav className="flex gap-4 md:gap-8">
           <button className="hidden md:block font-normal">Shop</button>
-          <BiCartAlt className="text-3xl" />
+          <Link to="/cart">
+            <BiCartAlt className="text-3xl" />
+          </Link>
           <BiMenu className="md:hidden text-3xl" />
         </nav>
       </div>
