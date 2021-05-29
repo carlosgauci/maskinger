@@ -1,6 +1,7 @@
 import React from "react"
 import { StaticImage } from "gatsby-plugin-image"
 import Button from "./Button"
+import { AnchorLink } from "gatsby-plugin-anchor-links"
 
 const Hero = () => {
   return (
@@ -27,7 +28,9 @@ const Hero = () => {
 
           <div className="flex flex-col items-center justify-center">
             <p className="mb-4 md:font-semibold">FIND YOUR FACE MASK</p>
-            <Button text="SHOP NOW" fullWidth={false} />
+            <AnchorLink to={`/#shop`}>
+              <Button text="SHOP NOW" fullWidth={false} />
+            </AnchorLink>
           </div>
 
           <StaticImage
