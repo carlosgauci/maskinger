@@ -8,7 +8,7 @@ import Checkout from "../components/Checkout"
 const CartPage = () => {
   const cart = useSelector(state => state.cart)
   return (
-    <div className="container max-w-4xl pt-24 pb-4 md:pt-28 md:pb-8">
+    <div className="container max-w-4xl pt-24 pb-4 md:pt-32 md:pb-8">
       <h2 className="text-2xl md:text-5xl font-normal font-heading text-center">
         Your Cart
       </h2>

@@ -7,7 +7,7 @@ import { Link } from "gatsby"
 const CartItem = ({ product }) => {
   const { name, price, cartImage, quantity, slug } = product
   return (
-    <article className="w-full grid grid-cols-2 md:grid-cols-4 gap-4 place-items-center py-4 px-4 bg-white border border-gray-200 shadow-sm rounded-md overflow-hidden mb-4">
+    <article className="w-full grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-4 place-items-center py-4 px-4 bg-white border border-gray-200 shadow-sm rounded-md overflow-hidden mb-4">
       {/* Product Image */}
       {cartImage && (
         <Link to={`/${slug}`}>
