@@ -20,17 +20,6 @@
   .min-h-20 {
     min-height: 5rem;
   }
-
-  /* Remove number input arrows */
-  input::-webkit-outer-spin-button,
-  input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-  }
-
-  input[type="number"] {
-    -moz-appearance: textfield;
-  }
 }
 
 @layer base {
@@ -52,7 +41,22 @@
     @apply font-body;
   }
 
-  .Toastify__progress-bar {
-    background: #309c8e;
+  html {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  button {
+    @apply focus:outline-none;
+  }
+
+  /* Remove number input arrows */
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  input[type="number"] {
+    -moz-appearance: textfield;
   }
 }

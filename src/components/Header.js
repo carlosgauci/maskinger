@@ -24,7 +24,9 @@ const Header = () => {
         <nav className="flex gap-4 md:gap-8">
           {/* Shop link */}
           <AnchorLink to={`/#shop`}>
-            <button className="hidden md:block font-normal">Shop</button>
+            <button className="hidden md:block text-lg font-heading">
+              Shop
+            </button>
           </AnchorLink>
 
           {/* Cart icon/link */}
