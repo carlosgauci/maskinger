@@ -2,8 +2,9 @@ import React from "react"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 import { useLocation } from "@reach/router"
+import PropTypes from "prop-types"
 
-const Seo = ({ title, description, image, article }) => {
+const Seo = ({ title, description, image, article, index }) => {
   const { pathname } = useLocation()
   const { site } = useStaticQuery(query)
 
@@ -19,6 +20,7 @@ const Seo = ({ title, description, image, article }) => {
     description: description || defaultDescription,
     image: `${image || siteUrl + defaultImage}`,
     url: `${siteUrl}${pathname}`,
+    index: index || `index`,
   }
 
   return (
@@ -26,6 +28,7 @@ const Seo = ({ title, description, image, article }) => {
       <meta name="description" content={seo.description} />
       <meta name="image" content={seo.image} />
       <html lang="en" />
+      <meta name="robots" content={seo.index} />
       {seo.url && <meta property="og:url" content={seo.url} />}
       {(article ? true : null) && <meta property="og:type" content="article" />}
       {seo.title && <meta property="og:title" content={seo.title} />}
@@ -42,9 +45,6 @@ const Seo = ({ title, description, image, article }) => {
     </Helmet>
   )
 }
-
-export default Seo
-
 const query = graphql`
   query SEO {
     site {
@@ -57,3 +57,13 @@ const query = graphql`
     }
   }
 `
+
+Seo.propTypes = {
+  title: PropTypes.string,
+  description: PropTypes.string,
+  image: PropTypes.string,
+  article: PropTypes.bool,
+  index: PropTypes.string,
+}
+
+export default Seo
