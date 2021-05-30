@@ -194,7 +194,7 @@
 }
 
 .slick-active button div {
-  border-color: #000;
+  border-color: rgb(145, 145, 145);
 }
 
 @media only screen and (min-width: 1024px) {

@@ -35,6 +35,18 @@
     @apply font-semibold;
   }
 
+  h1,
+  h2,
+  h3,
+  h4,
+  a {
+    @apply text-gray-900;
+  }
+
+  p {
+    @apply text-gray-700;
+  }
+
   p,
   li,
   a {

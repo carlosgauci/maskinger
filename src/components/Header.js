@@ -1,5 +1,6 @@
 import React from "react"
-import { BiMenu, BiCartAlt } from "react-icons/bi"
+import { BiMenu } from "react-icons/bi"
+import { IoCartOutline } from "react-icons/io5"
 import { Link } from "gatsby"
 import { useSelector, useDispatch } from "react-redux"
 import { toggleNav } from "../actions/CartActions"
@@ -32,7 +33,7 @@ const Header = () => {
           {/* Cart icon/link */}
           <Link to="/cart">
             <div className="relative">
-              <BiCartAlt className="text-3xl" />
+              <IoCartOutline className="text-3xl text-gray-700" />
               {totalItems > 0 && (
                 <span className="absolute top-0 right-0 bg-primary rounded-full w-4 h-4 flex items-center justify-center text-xxs text-white font-body  transform translate-x-1.5 -translate-y-1.5">
                   {totalItems}
@@ -43,7 +44,7 @@ const Header = () => {
 
           {/* Mobile nav icon */}
           <BiMenu
-            className="md:hidden text-3xl"
+            className="md:hidden text-3xl text-gray-700"
             onClick={() => dispatch(toggleNav())}
           />
         </nav>

@@ -12,7 +12,7 @@ const CartPage = () => {
     <>
       <Seo title="Shopping Cart | Maskinger" />
       <div className="container max-w-4xl pt-24 pb-4 md:pt-32 md:pb-8">
-        <h2 className="text-2xl md:text-5xl font-normal font-heading text-center">
+        <h2 className="text-3xl md:text-5xl font-normal font-heading text-center">
           Your Cart
         </h2>
 

@@ -85,7 +85,9 @@ const ProductPage = ({ data }) => {
             </h2>
 
             {/* Price */}
-            <p className="text-2xl md:text-3xl">€{(price / 100).toFixed(2)}</p>
+            <p className="text-2xl md:text-3xl text-gray-900">
+              €{(price / 100).toFixed(2)}
+            </p>
 
             {/* Quantity select */}
             <QuantitySelect quantity={quantity} setQuantity={setQuantity} />
