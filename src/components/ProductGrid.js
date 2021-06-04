@@ -6,7 +6,7 @@ const ProductGrid = ({ products }) => {
   return (
     <section className="container py-8" id="shop">
       <h3 className="font-heading text-center text-2xl md:text-4xl mb-4 md:mb-8">
-        Face Masks
+        Our Collection
       </h3>
 
       <div className="grid auto-fit gap-8">

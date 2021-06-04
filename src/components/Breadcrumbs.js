@@ -1,14 +1,14 @@
 import React from "react"
-import { Link } from "gatsby"
+import { AnchorLink } from "gatsby-plugin-anchor-links"
 import { BsChevronRight } from "react-icons/bs"
 import PropTypes from "prop-types"
 
 const Breadcrumbs = ({ name }) => {
   return (
     <section className="container flex items-center gap-2 md:gap-4 py-4">
-      <Link to="/" className="underline">
+      <AnchorLink className="underline" to={`/#shop`}>
         Shop
-      </Link>
+      </AnchorLink>
       <BsChevronRight className="text-xs" />
       <p className="truncate">{name}</p>
     </section>

@@ -25,9 +25,9 @@ const ProductCard = ({ product }) => {
 
         <section className="absolute inset-0 flex flex-col justify-between">
           {/* New tag */}
-          <div className="pl-1 pt-1">
+          <div className="p-1">
             {product.new && (
-              <p className="bg-primary inline text-center text-xs py-0.5 px-2 text-white rounded-md">
+              <p className="bg-primary w-10 h-5 text-center text-xs py-0.5 px-2 text-white rounded-md">
                 new
               </p>
             )}

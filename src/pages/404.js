@@ -8,7 +8,7 @@ const NotFoundPage = () => (
     <Seo title="404 Not Found" index="noindex" />
 
     <div className="container py-28 flex flex-col items-center">
-      <h1 className="text-3xl md:text-5xl mb-6">404: Not Found</h1>
+      <h2 className="text-3xl md:text-5xl mb-6 font-heading">404: Not Found</h2>
       <p className="mb-6">
         You just hit a route that doesn&#39;t exist... the sadness.
       </p>
