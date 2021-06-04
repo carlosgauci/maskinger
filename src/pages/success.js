@@ -1,9 +1,17 @@
-import React from "react"
+import React, { useEffect } from "react"
 import Button from "../components/Button"
 import Seo from "../components/Seo"
 import { AnchorLink } from "gatsby-plugin-anchor-links"
+import { useDispatch } from "react-redux"
+import { emptyCart } from "../actions/CartActions"
 
 const SuccessPage = () => {
+  const dispatch = useDispatch()
+
+  // Empty the cart on checkout success
+  useEffect(() => {
+    dispatch(emptyCart())
+  }, [dispatch])
   return (
     <>
       <Seo title="Order Successful" index="noindex" />
